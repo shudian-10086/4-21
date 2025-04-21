@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - The Dark Queen of Mortholme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👑</text></svg>">
+    <style>
+        
+:root {
+    --primary-dark: #1a1a1d; 
+    --secondary-dark: #2c2f33; 
+    --tertiary-dark: #4f545c; 
+    --primary-light: #f0f0f0; 
+    --secondary-light: #b0b3b8; 
+    --accent-color: #8a0303; 
+    --accent-hover: #a11e1e;
+    --cta-bg: var(--accent-color);
+    --cta-text: var(--primary-light);
+    --nav-bg: rgba(26, 26, 29, 0.9); 
+    
+    --body-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --section-padding: 60px 20px;
+    --container-width: 960px;
+    
+    --gothic-font: 'UnifrakturMaguntia', cursive;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; 
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section.content-section {
+    padding: var(--section-padding);
+    background-color: var(--secondary-dark); 
+    border-bottom: 1px solid var(--tertiary-dark);
+}
+section:nth-child(odd):not(#home) { 
+    background-color: #222529;
+}
+section:last-of-type {
+    border-bottom: none;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-light);
+    font-weight: 600;
+}
+
+
+h1 {
+  
+  font-family: var(--gothic-font);
+  
+  font-size: 4.0rem;
+  
+  line-height: 1.3;
+  
+  font-weight: normal;
+  color: var(--primary-light);
+  text-align: center;
+  margin-bottom: 1rem;
+  
+}
+
+h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+
+p {
+    margin-bottom: 1rem;
+    color: var(--secondary-light);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px; 
+}
+
+
+#main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(10px); 
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+/* #main-nav.scrolled { 背景色变化可选
+    background-color: rgba(26, 26, 29, 1);
+} */
+
+#main-nav .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-light);
+    
+}
+
+#main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+#main-nav ul li {
+    margin-left: 25px;
+}
+
+#main-nav ul li a {
+    color: var(--secondary-light);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+#main-nav ul li a::after { 
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+#main-nav ul li a:hover,
+#main-nav ul li a.active {
+    color: var(--primary-light);
+}
+
+#main-nav ul li a:hover::after,
+#main-nav ul li a.active::after {
+    width: 100%;
+}
+
+
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--cta-bg);
+    color: var(--cta-text);
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    border: 2px solid transparent;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-hover);
+    color: var(--cta-text);
+    transform: translateY(-2px);
+}
+.cta-button:active {
+    transform: translateY(0px);
+}
+
+.scroll-down-link {
+    display: block;
+    margin-top: 3rem;
+    color: var(--secondary-light);
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+.scroll-down-link:hover {
+    color: var(--primary-light);
+}
+
+
+.concept-section .container {
+    display: flex;
+    align-items: center;
+    gap: 40px; 
+}
+
+.concept-text {
+    flex: 1; 
+}
+.concept-visual {
+    flex: 0 0 40%; 
+    text-align: center;
+}
+.concept-visual img {
+    max-width: 100%;
+    border: 3px solid var(--tertiary-dark);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+blockquote {
+    background-color: var(--primary-dark);
+    border-left: 5px solid var(--accent-color);
+    padding: 20px 30px;
+    margin: 0;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+}
+
+blockquote p {
+    margin-bottom: 0.8rem;
+    color: var(--primary-light);
+}
+
+blockquote cite {
+    display: block;
+    text-align: right;
+    font-style: normal;
+    font-weight: bold;
+    color: var(--secondary-light);
+    font-size: 0.9rem;
+}
+
+
+.download-content {
+    text-align: center;
+}
+.download-visual {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-light);
+}
+.download-visual .vs-text {
+    font-size: 1.5rem;
+    margin: 0 15px;
+    vertical-align: middle;
+    color: var(--tertiary-dark);
+}
+.hero-icon { color: #7bb4e3; } 
+.queen-icon { color: var(--accent-color); }
+
+.download-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--primary-light);
+}
+.large-cta {
+    padding: 15px 40px;
+    font-size: 1.3rem;
+}
+.large-cta i {
+    margin-right: 10px;
+}
+
+.platform-icons {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+}
+.platform-icons i {
+    margin: 0 15px;
+    color: var(--secondary-light);
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+.platform-icons i:hover {
+    opacity: 1;
+}
+
+
+#footer {
+    background-color: var(--primary-dark);
+    color: var(--secondary-light);
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+}
+#footer p {
+    margin-bottom: 0.5rem;
+    color: var(--secondary-light);
+}
+#footer a {
+    color: var(--secondary-light);
+}
+#footer a:hover {
+    color: var(--primary-light);
+}
+.back-to-top {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+
+@media (max-width: 992px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    .container { max-width: 100%; }
+    .concept-section .container { flex-direction: column; text-align: center; }
+    .concept-visual { flex: 0 0 auto; margin-top: 30px; max-width: 350px; }
+    .features-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .media-gallery { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+}
+
+@media (max-width: 768px) {
+    
+    #main-nav ul { display: none; } 
+    #main-nav .nav-container { justify-content: center; } 
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.8rem; }
+    .hero-content p { font-size: 1rem; }
+    .cta-button { padding: 10px 25px; font-size: 1rem; }
+    .large-cta { padding: 12px 30px; font-size: 1.1rem; }
+    .content-section { padding: 40px 15px; }
+    .features-grid { grid-template-columns: 1fr; } 
+    .reviews-grid { grid-template-columns: 1fr; } 
+    .media-gallery { grid-template-columns: 1fr; } 
+    .platform-icons i { margin: 0 10px; font-size: 1.6rem;}
+}
+
+
+
+#footer .disclaimer {
+    font-size: 0.8rem;
+    color: var(--tertiary-dark); 
+    max-width: 700px; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem; 
+    line-height: 1.4;
+    font-style: italic;
+}
+
+h3{font-size:24px;margin:20px 0 }
+
+
+
+@media (max-width: 768px) {
+    
+    .faq-question {
+        font-size: 1rem;
+    }
+    .faq-answer p {
+        font-size: 0.9rem;
+    }
+    #footer .disclaimer {
+        font-size: 0.75rem;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <nav id="main-nav">
+        <div class="nav-container">
+            
+            <span class="nav-logo">The Dark Queen of Mortholme</span>
+            <ul>
+                <li><a href="/" class="nav-link active">Home</a></li>
+                <li><a href="/#concept" class="nav-link">Concept</a></li>
+                <li><a href="/#features" class="nav-link">Features</a></li>
+                <li><a href="/#media" class="nav-link">Media</a></li>
+                <li><a href="/#story" class="nav-link">Story</a></li>
+                <li><a href="/#reviews" class="nav-link">Reviews</a></li>
+                <li><a href="/#faq" class="nav-link">FAQ</a></li>
+                <li><a href="/#download" class="nav-link">Download</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- 5. Story & Themes -->
+    <section  id="home" class="content-section story-section">
+        <div class="container story-content" style="padding-top:50px;text-align:center;">
+             
+            <h1>404</h1>
+             <h2>Page Not Found</h2>
+<p><a href="/">Return to Homepage</a><p>
+
+
+        </div>
+    </section>
+
+
+
+    <!-- 9. Footer -->
+    <footer id="footer">
+        <div class="container">
+             <p class="disclaimer">
+                 
+                This is an unofficial fan site for The Dark Queen of Mortholme. We are not affiliated with or endorsed by Mosu Äijälä or the game's development team. All game-related content, trademarks, and intellectual property belong to their respective owners.
+            </p>
+            
+            <p>© <span id="current-year"></span> template.org. All rights reserved. <a href="/privacy/">Privacy</a> | <a href="/terms-of-service/">Terms Of Service</a></p>
+
+            <a href="#home" class="back-to-top">Back to Top ↑</a>
+        </div>
+    </footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // === Existing Variables... ===
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+    const yearSpan = document.getElementById('current-year');
+    const mainNav = document.getElementById('main-nav');
+
+    // === Existing Functions (changeNavOnScroll) ===
+    function changeNavOnScroll() {
+        let currentSectionId = '';
+        // Calculate offset based on nav height (adjust if nav height changes)
+        const navHeight = mainNav ? mainNav.offsetHeight : 70;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+             // Adjust offset slightly more for better activation timing
+            if (pageYOffset >= sectionTop - navHeight - 10 && pageYOffset < sectionTop + sectionHeight - navHeight - 10) {
+                currentSectionId = section.getAttribute('id');
+            }
+        });
+
+         // Edge case: Activate last nav item when scrolled near the bottom
+        if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 10) { // Near bottom
+             const lastSection = sections[sections.length - 1];
+             if (lastSection) {
+                 currentSectionId = lastSection.getAttribute('id');
+             }
+        }
+        // Edge case: Activate first nav item when at the very top
+         if (pageYOffset < sections[0].offsetTop - navHeight) {
+              currentSectionId = sections[0].getAttribute('id');
+         }
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            // Check if the link's href includes the current section ID
+            const linkHref = link.getAttribute('href');
+            if (linkHref && linkHref.includes(currentSectionId)) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // === Smooth Scrolling (using CSS primarily) ===
+    // JS fallback removed for brevity unless specifically needed
+
+    // === Footer Year ===
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+
+    // === Optional Nav Scroll Background ===
+    /*
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            mainNav.classList.add('scrolled');
+        } else {
+            mainNav.classList.remove('scrolled');
+        }
+    });
+    */
+
+    // === NEW: FAQ Accordion Logic ===
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const questionButton = item.querySelector('.faq-question');
+        const answerDiv = item.querySelector('.faq-answer');
+
+        questionButton.addEventListener('click', () => {
+            const isOpen = item.classList.contains('active');
+
+            // Optional: Close other open items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                }
+            });
+
+            // Toggle current item
+            if (isOpen) {
+                item.classList.remove('active');
+                answerDiv.style.maxHeight = null; // Collapse
+            } else {
+                item.classList.add('active');
+                // Set max-height to the scroll height to animate open
+                answerDiv.style.maxHeight = answerDiv.scrollHeight + "px";
+            }
+        });
+    });
+
+
+    // === Initialization ===
+    window.addEventListener('scroll', changeNavOnScroll); // Listen for scroll events
+    changeNavOnScroll(); // Initial call to set active nav link
+
+}); // End DOMContentLoaded
+    </script>
+</body>
+</html>
